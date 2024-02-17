@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2>Книги в жанре "{{ genre_name }}"</h2>
+{%- for book in books %}
+<ul>
+    <li>Название: {{ book.title }}</li>
+    <li>Автор: {{ book.author }}</li>
+    <li>Добавлена: {{ book.added }}</li>
+    <li>Статус: {{ book.get_status() }}</li>
+    {% if book.is_read == 0 %}
+    <li>
+        <a href="{{ url_for('change_status', book_id=book.id) }}">Отметить как прочитанная</a>
+    </li>
+    {% endif %}
+</ul>
+<hr>
+{%- endfor %}
+{% endblock %}
