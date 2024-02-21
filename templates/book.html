@@ -8,21 +8,23 @@
     <title>Document</title>
 </head>
 <body>
-<ul>
-    <li>Название: {{ book.title }}</li>
-    <li>Автор: {{ book.author }}</li>
-    <li>Добавлена: {{ book.added }}</li>
-    <li>
-        <a href="{{ url_for('books_by_genre', genre_id=book.genre_id) }}">Жанр: {{
-            book.genre.name }}</a>
-    </li>
-    <li>Статус: {{ book.get_status() }}</li>
-    <li>
-        <form method="POST">
-            Отметить как прочитанная <input type="checkbox" value="1" name="my_checkbox">
-            <button>Сохранить</button>
-        </form>
-    </li>
-</ul>
+<div>
+    <ul>
+        <li>Название: {{ book.title }}</li>
+        <li>Автор: {{ book.author }}</li>
+        <li>Добавлена: {{ book.added }}</li>
+        <li>
+            <a href="{{ url_for('books_by_genre', genre_id=book.genre_id) }}">Жанр: {{
+                book.genre.name }}</a>
+        </li>
+        <li>Статус: {{ book.get_status() }}</li>
+        <li>
+            <form method="POST">
+                Отметить как прочитанная <input type="checkbox" value="1" name="my_checkbox">
+                <button>Сохранить</button>
+            </form>
+        </li>
+    </ul>
+</div>
 </body>
 </html>
